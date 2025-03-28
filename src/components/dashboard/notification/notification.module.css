@@ -1,0 +1,12 @@
+.root {
+    background: #4F4ACC !important;
+    background-color: #4F4ACC !important;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #4F4ACC;
+}
+
+.description,
+.title {
+  color: var(--mantine-color-white);
+}

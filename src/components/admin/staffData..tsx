@@ -1,0 +1,78 @@
+'use client'
+import { getUsers } from "@/lib/admin/users";
+import { cn } from "@/lib/utils";
+import { formatDateToTz } from "@/utils/formatDate";
+import { formatNumber } from "@/utils/formatNumber";
+import { fetchFlow } from "@/utils/modules/fetchFlow";
+import { showDashNotification } from "@/utils/notificationManager";
+import { useResizeObserver } from "@/utils/tools/useResizeObserver";
+import { Avatar, Badge, Image, Table } from "@mantine/core";
+import { IconBan, IconEdit, IconTrash } from "@tabler/icons-react";
+import { useState, useEffect, useRef } from "react";
+
+export default function StaffData() {
+    const [data, setData] = useState<any[]>([]);
+    const [error, setError] = useState<string | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
+    const parentRef = useRef<HTMLDivElement | null>(null);
+    const isSmall = useResizeObserver(parentRef, 600);
+  
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("/api/admin/fetchStaff");
+        const data = await response.json();
+        setData(data.staff);
+      } catch (err) {
+        setError((err as Error).message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    useEffect(() => {
+    
+      fetchData();
+
+      const intervalId = setInterval(fetchData, 30000);
+      
+      return () => clearInterval(intervalId);
+      
+    }, []);
+
+    const rows = data.map((element, index) => (
+        <Table.Tr key={index}> 
+          <Table.Td>
+            <div className="flex w-fit gap-4 items-center">
+                <div className={cn("flex flex-col w-fit h-fit gap-1 font-bold", isSmall ? "text-xs" : "")}>
+                    {element.name}
+                    <div className="flex gap-1 items-center">
+                      <Badge variant="light" ml={'-4px'} color={'white'} size="xs">{element.role}</Badge> | {element.email}
+                    </div>
+                </div>
+            </div>
+          </Table.Td>
+          <Table.Td className={isSmall ? "text-xs" : ""}>
+            <div className="flex gap-2">
+                <button type="button">
+                    {/* <IconTrash onClick={() => {handleSubmit(element.id)}} /> */}
+                </button>
+            </div>
+          </Table.Td>
+        </Table.Tr>
+    ));
+
+    return (
+        <div ref={parentRef} className="flex w-full h-full flex-col overflow-y-scroll relative">
+            <Table striped highlightOnHover withRowBorders={false} stickyHeader stickyHeaderOffset={0}>
+                <Table.Thead>
+                  <Table.Tr>
+                    <Table.Th className={cn("py-3", isSmall ? 'text-xs' : '')}>Profile</Table.Th>
+                    <Table.Th className={cn("py-3", isSmall ? 'text-xs' : '')}>Actions</Table.Th>
+                  </Table.Tr>
+                </Table.Thead>
+                <Table.Tbody>{rows}</Table.Tbody>
+            </Table>
+        </div>
+    )
+}

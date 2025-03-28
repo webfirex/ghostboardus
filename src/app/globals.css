@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --radius: 10px;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+  }
+}
+
+body {
+  background-color: #000;
+  background: #000;
+}
+
+* {
+  --input-bg: #ffffff05;
+  --input-bd: #ffffff15;
+  --input-color: #ffffff;
+  --input-bd-focus: #ffffff35;
+  --table-striped-color: #ffffff05;
+  --table-hover-color: #ffffff05;
+  --table-border-color: #ffffff05;
+  --mantine-color-text: #ffffff70;
+  --mantine-color-gray-1: #00000030;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hide scrollbar for WebKit-based browsers */
+html {
+  overflow: -moz-scrollbars-none; /* Fallback for older Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
+
+.dashGhostBg {
+  background: url('/bg/dashGhostbg.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.mantine-MultiSelect-dropdown {
+  background-color: #ffffff05;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+.mantine-Menu-dropdown {
+  background-color: #ffffff05;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-color: #ffffff15;
+}
+
+.m_38a85659.mantine-Popover-dropdown {
+  background-color: #ffffff05;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-color: #ffffff15;
+}
+
+.m_b242d975.mantine-Table-thead {
+  background-color: #00000035;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+.m_1b7284a3 {
+  background-color: #ffffff05;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+.m_b5489c3c {
+  background-color: transparent;
+  /* position: fixed; */
+  /* border-bottom: 1px solid #ffffff15; */
+}
+
+.m_b5489c3c button {
+  background-color: #1e1e1e;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+[data-highcharts-chart] {
+  height: 100% !important; /* Ensure that the height takes effect */
+}
+
+:where([data-mantine-color-scheme='dark']) .m_326d024a {
+  border-color: #ffffff10;
+  background-color: #ffffff10;
+}
+
+.m_326d024a:where([data-active]) {
+  background-color: var(--pagination-active-bg);
+  border-color: var(--pagination-active-bg);
+  color: var(--pagination-active-color, var(--mantine-color-white));
+}
+
+.m_4ad7767d {
+  display: none
+}
+
+/* .m_8fb7ebe7, .m_99ac2aa1 {
+  color: #ffffff70;
+} */
