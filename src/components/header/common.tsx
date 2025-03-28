@@ -78,9 +78,9 @@ export default function Header() {
                         Sign Up
                         <IconGhost2 stroke={'1px'} />
                     </Link>
-                    <a href="/dashboard" className={manrope.className + " bg-white/5 border-[0.2px] border-white/10 scale-95 hover:scale-100 transition-all rounded-full font-bold text-white px-5 py-3 backdrop-blur-lg"}>
+                    <Link href="/dashboard" className={manrope.className + " bg-white/5 border-[0.2px] border-white/10 scale-95 hover:scale-100 transition-all rounded-full font-bold text-white px-5 py-3 backdrop-blur-lg"}>
                         <IconRocket stroke={'1px'} />
-                    </a>
+                    </Link>
                 </div>
             </div>
 
