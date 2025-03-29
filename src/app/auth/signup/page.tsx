@@ -128,12 +128,6 @@ export default function SignUp() {
                       <Input value={userEmail} onChange={(event) => setUserEmail(event.currentTarget.value)} required classNames={{ input: 'bg-white/5 border-white/15 text-sm' }} placeholder="Your e-mail" size="lg" radius="md" mt={'7px'} leftSection={<IconMail style={{ width: rem(18), height: rem(18) }} stroke={1.5} />} type="email" />
                     </Input.Wrapper>
 
-                    <Popover opened={popoverOpened} position="bottom" width="target" transitionProps={{ transition: 'pop' }}>
-                      <Popover.Target>
-                        <div
-                          onFocusCapture={() => setPopoverOpened(true)}
-                          onBlurCapture={() => setPopoverOpened(false)}
-                        >
                           <PasswordInput
                             label="Password"
                             placeholder="Your password"
@@ -147,14 +141,6 @@ export default function SignUp() {
                             required
                             withAsterisk={false}
                           />
-                        </div>
-                      </Popover.Target>
-                      <Popover.Dropdown>
-                        <Progress color={color} value={strength} size={5} mb="xs" />
-                        <PasswordRequirement label="Includes at least 6 characters" meets={password.length > 5} />
-                        {checks}
-                      </Popover.Dropdown>
-                    </Popover>
 
                     <PasswordInput
                       label="Confirm password"
@@ -171,7 +157,7 @@ export default function SignUp() {
                     />
 
                     <button type="button" onClick={handleSubmit} className=" mt-5 w-full bg-primary self-center px-5 py-3 rounded-full">
-                        Register Now
+                        Register
                     </button>
 
                     {/* <Divider my="xs" label="or" labelPosition="center" w={'70%'} className="self-center" />
