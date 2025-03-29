@@ -74,7 +74,7 @@ export default function Login() {
           return;
         }
 
-        router.push("/dashboard");
+        router.push("https://ghostboard.net/dashboard");
       } catch (err) {
         setError("An unexpected error occurred. Please try again.");
         showNotification(notifyData);

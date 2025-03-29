@@ -34,6 +34,7 @@ export default function RootLayout({
         <meta name="twitter:title" content="👋 Say Hello to GhostBoard 2.0!" />
         <meta name="twitter:description" content="The wait is over — GhostBoard 2.0 is here! With a stunning new dashboard, smarter insights, and enhanced features, it's time to level up your trading experience." />
         <meta name="twitter:image" content="https://i.ibb.co/x2cCjQP/Whats-App-Image-2025-01-24-at-02-37-54.jpg" />
+        <meta name="facebook-domain-verification" content="xndbhauhq822bf87ukdtie4clxwekg" />
         
         <link rel="icon" href="https://ghostboard.net/favicon.png" />
           <script

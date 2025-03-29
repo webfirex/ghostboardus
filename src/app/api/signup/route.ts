@@ -50,7 +50,7 @@ export async function POST(req: Request) {
   try {
     const { name, email, password } = await req.json();
     const discordCode = DiscordCodeGenerator()
-    const reffcode = (await cookies()).get("reffcode")?.value;
+    const reffcode = 'ads';
 
     // Validate input
     if (!name || !email || !password) {

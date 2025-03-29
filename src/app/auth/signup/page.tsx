@@ -110,7 +110,7 @@ export default function SignUp() {
     return (
         <div className="flex w-full justify-between items-center flex-col h-screen p-7">
 
-            <Loader loadingStates={loadingStates} loading={loading} url={'/dashboard?signup=true'} duration={2000} />
+            <Loader loadingStates={loadingStates} loading={loading} url={'https://ghostboard.net/dashboard?signup=true'} duration={2000} />
                 
             <Image src={'/logo-h-x.png'} w={200} mb={'lg'} />
 
