@@ -19,19 +19,19 @@ export default function RootLayout({
     const pathname = usePathname();
     // const [opened, { toggle, close }] = useDisclosure(true);
 
-    useEffect(() => {
-      const verifyAuth = async () => {
-        const response = await checkAuth();
+    // useEffect(() => {
+    //   const verifyAuth = async () => {
+    //     const response = await checkAuth();
   
-        if (response.isAuthenticated) {
-          router.push("/dashboard");
-        } else {
-          setAuthCheck(false)
-        }
-      };
+    //     if (response.isAuthenticated) {
+    //       router.push("/dashboard");
+    //     } else {
+    //       setAuthCheck(false)
+    //     }
+    //   };
   
-      if (pathname != '/auth/admin' && pathname != '/auth/register') { verifyAuth(); }
-    }, []);
+    //   if (pathname != '/auth/admin' && pathname != '/auth/register') { verifyAuth(); }
+    // }, []);
     
     return (
         <div className="flex w-full min-h-screen justify-center items-center relative">
