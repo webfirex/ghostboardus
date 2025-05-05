@@ -35,6 +35,7 @@ export default function SignUp() {
     const [cPassword, setCPassword] = useState('');
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
+    const [userId, setUserId] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [loading, setLoading] = useState(false);
@@ -89,6 +90,9 @@ export default function SignUp() {
           return;
         }
 
+        const message = await res.json()
+        setUserId(message.id)
+
         setLoading(true)
         setSuccess('Signup successful! You can now log in.');
         setUserEmail('');
@@ -110,7 +114,7 @@ export default function SignUp() {
     return (
         <div className="flex w-full justify-between items-center flex-col h-screen p-7">
 
-            <Loader loadingStates={loadingStates} loading={loading} url={'https://ghostboard.net/dashboard?signup=true'} duration={2000} />
+            <Loader loadingStates={loadingStates} loading={loading} url={`https://ghostboard.net/auth/thankYou?id=${userId}`} duration={2000} />
                 
             <Image src={'/logo-h-x.png'} w={200} mb={'lg'} />
 
