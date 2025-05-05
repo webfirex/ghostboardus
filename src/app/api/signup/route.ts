@@ -132,7 +132,7 @@ export async function POST(req: Request) {
     };
     (await cookies()).set('user_id', hashedId, cookieOptions);
 
-    return NextResponse.json({ message: 'User signed up successfully', id: 'newUserId' });
+    return NextResponse.json({ message: 'User signed up successfully', id: newUserId });
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
