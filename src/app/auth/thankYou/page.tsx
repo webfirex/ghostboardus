@@ -29,7 +29,7 @@ export default function ThankYou() {
     }
 
     if (countdown === 0) {
-      router.push(`https://ghostboard.net/thankYou?id=${id}`)
+      router.push(`https://ghostboard.net/auth/thankYou?id=${id}`)
     }
   }, [countdown, router])
 
